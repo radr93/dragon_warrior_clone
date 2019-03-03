@@ -1,0 +1,23 @@
+id,name,sprite,description,usable,equippable,passive,key,effect,effectValue,effectRange,cost
+0,Bamboo Pole,spr_BambooPole,A small pole made of bamboo.,0,1,0,0,augmentAttack,2,-1,10
+1,Club,spr_Club,A small wooden club.,0,1,0,0,augmentAttack,4,-1,60
+2,Short Sword,spr_ShortSword,A light blade made of fine steel.,0,1,0,0,augmentAttack,10,-1,180
+3,Hand Axe,spr_HandAxe,A well balanced hatchet.,0,1,0,0,augmentAttack,15,-1,560
+4,Broad Sword,spr_BroadSword,A wide and sturdy blade.,0,1,0,0,augmentAttack,20,-1,1500
+5,Flame Sword,spr_FlameSword,An enchanted blade that glows with fire.,0,1,0,0,augmentAttack,28,-1,9800
+6,Erdrick's Sword,spr_ErdricksSword,The legendary blade of your ancestors.,0,1,0,0,augmentAttack,40,-1,-1
+7,Clothing,spr_Clothing,Simple clothing that does not offer much protection.,0,1,0,0,augmentDefence,2,-1,20
+8,Leather Armor,spr_LeatherArmor,Leather armor that offers some protection.,0,1,0,0,augmentDefence,4,-1,70
+9,Chain Mail,spr_ChainMail,Armor made of steel links that offers decent protection.,0,1,0,0,augmentDefence,10,-1,300
+10,Half Plate,spr_HalfPlate,Strong steel plating that covers most of your body.,0,1,0,0,augmentDefence,16,-1,1000
+11,Full Plate,spr_FullPlate,Strong steel plating that covers your whole body.,0,1,0,0,augmentDefence,24,-1,3000
+12,Enchanted Plate,spr_EnchantedPlate,Enchanted chain mail that glows with myterious properties.,0,1,0,0,augmentDefence,24,-1,7700
+13,Erdrick's Armor,spr_ErdricksArmor,The mysterious armor of your ancestors.,0,1,0,0,augmentDefence,28,-1,-0
+14,Buckler,spr_Buckler,A small shield that wards off simple attacks.,0,1,0,0,augmentDefence,4,-1,90
+15,Kite Shield,spr_KiteShield,A large shield that wards off stronger attacks.,0,1,0,0,augmentDefence,10,-1,800
+16,Gilded Shield,spr_GildedShield,A beautiful shield that wards off the strongest attacks.,0,1,0,0,augmentDefence,20,-1,14800
+17,Potion,spr_Potion,A strange concoction that heals you for 20-35 HP.,1,0,0,0,heal,20,35,24
+18,Magic Dust,spr_MagicDust,Strange dust that brings you back home when dropped at your feet.,1,0,0,0,teleHome,-1,-1,70
+19,Torch,spr_Torch,Illuminate dark caves throughout your travels.,1,0,0,0,illuminate,-1,-1,8
+20,Dragon Scale,spr_DragonScale,This dragon scale provides you with additional protection against damage.,0,0,1,0,augmentDefence,2,-1,20
+21,Skeleton Key,spr_SkeletonKey,An odd key that seems to fit any lock it gets put in. Breaks on use.,0,0,0,1,none,-1,-1,60
