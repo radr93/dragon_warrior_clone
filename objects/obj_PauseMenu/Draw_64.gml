@@ -74,10 +74,10 @@ if (inSubMenu){
 		#region Backdrop
 		// Get size of status menu
 		var x1, y1, x2, y2;
-		x1 = 144;	// Left side of options list
-		y1 = 16;	// Top of options list
-		x2 = 543;	// Right side of options list
-		y2 = 191;	// Bottom of options list
+		x1 = 144;	// Left side of status menu
+		y1 = 16;	// Top of status menu
+		x2 = 543;	// Right side of status menu
+		y2 = 191;	// Bottom of status menu
 
 		// Draw the backdrop of the options list
 		draw_set_color(c_black);
@@ -136,12 +136,28 @@ if (inSubMenu){
 	if (optionSelected == optionsList.items){
 		
 		#region Backdrop
-		// Get size of status menu
+		
+		// Get size of item menu
 		var x1, y1, x2, y2;
-		x1 = 144;	// Left side of options list
-		y1 = 16;	// Top of options list
-		x2 = 591;	// Right side of options list
-		y2 = 351;	// Bottom of options list
+		x1 = 144;	// Left side of item menu
+		y1 = 16;	// Top of item menu
+		x2 = 703;	// Right side of v menu
+		y2 = 351;	// Bottom of item menu
+
+		// Draw the backdrop of the options list
+		draw_set_color(c_black);
+		draw_rectangle(x1, y1, x2, y2, false);
+
+		// Draw the outline of the options list
+		draw_set_color(c_white);
+		draw_rectangle(x1, y1, x2, y2, true);
+		
+		// Get size of description box
+		var x1, y1, x2, y2;
+		x1 = 32;	// Left side of description box
+		y1 = 384;	// Top of description box
+		x2 = 991;	// Right side of description box
+		y2 = 543;	// Bottom of description box
 
 		// Draw the backdrop of the options list
 		draw_set_color(c_black);
@@ -154,48 +170,52 @@ if (inSubMenu){
 		
 		#region Draw the Item list text
 		
-		var xx, xx2, yy, itemCount;
-		xx = 176;	// X position of name
-		xx2 = 336;	// X position of quantity
+		var xx, xx2, yy, itemList, itemCount;
+		xx = 208;	// X position of name
+		xx2 = 368;	// X position of quantity
 		yy = 32;	// Y position 
 		itemCount = 0;
 		
 		// Loop through player's currently held items
 		var player = obj_PlayerController;
-		for (var i = 0; i < itemID.MAX; i++){
+		for (var i = 0; i < itemID.MAX-1; i++){
 			
 			// If the player has 1 or more of the item
-			if (player.items[i] > 0){
+			if (player.items[i] > 0 and itemCount < 19){
 				
 				// Look up the item ID in the item database
 				var itemId, itemDB, gridHeight, index;
 				itemId = i;
 				itemDB = obj_ItemDatabase.itemDB;
 				gridHeight = ds_grid_height(itemDB);
-				index = ds_grid_value_y(itemDB, 0, 0, 0, gridHeight-1, itemId);
+				index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemId);
 				
 				// If the item isn't equipment
 				//if (itemDB[# idb.equippable, index] == 0){
 					
+					// Draw Item Sprite
+					show_debug_message("Current index: "+string(index));
+					if (sprite_exists(itemDB[# idb.sprite, index])){
+						draw_sprite(itemDB[# idb.sprite, index], 0, xx-32, yy);
+					}
 					// Draw Item Name
 					draw_text(xx, yy, string(itemDB[# idb.name, index]));
 					
 					// Draw Item Quantity
 					draw_text(xx2, yy, "x"+string(player.items[i]));
 					
-					itemCount++;					
+					itemList[itemCount] = itemDB[# idb.id, index];
+					itemCount++;
+					
 					if (itemCount == 10){
-						xx = 384;
-						xx2 = 560;
+						xx = 480;
+						xx2 = 656;
 						yy = 32;
 					}
 					else{
 						yy += 32;
 					}
-					
-					
 				//}
-				
 			}
 		}
 		
