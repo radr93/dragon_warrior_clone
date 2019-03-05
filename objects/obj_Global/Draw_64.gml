@@ -1,3 +1,6 @@
 /// @description Draw Debug Info
 
-//draw_text(32, 32, "global.paused: "+string(global.paused));
+/*
+if (instance_exists(obj_PauseMenu)){
+	draw_text(4, 232, "itemSelected = "+string(obj_PauseMenu.itemSelected));
+}

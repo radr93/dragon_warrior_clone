@@ -5,6 +5,6 @@ image_speed = 0;
 sprite_index = spr_PlayerDown;
 
 // Set movement speed
-moveSpeed = 32;
+moveSpeed = 16;
 targetX = x;
 targetY = y;

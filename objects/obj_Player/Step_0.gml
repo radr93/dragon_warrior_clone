@@ -1,4 +1,4 @@
-/// @description Handle Player Input
+ob/// @description Handle Player Input
 
 // If the game is not paused
 if (!global.paused){

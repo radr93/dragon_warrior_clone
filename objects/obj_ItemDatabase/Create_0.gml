@@ -45,12 +45,15 @@ enum itemID{
 #region Enumerate Item Effects
 enum itemEffect{
 	none,
-	augmentAttack,
-	augmentDefence,
+	weapon,
+	armor,
+	shield,
 	heal,
 	teleHome,
 	illuminate,
-
+	augmentDefence,
+	unlock,
+	
 	MAX
 	
 }
@@ -94,7 +97,7 @@ enum idb{
 #endregion
 
 // Load the database
-itemDB = load_csv("databases/items/itemDB.csv");
+itemDB = load_csv("databases/itemDB.csv");
 
 // Convert all numbers from strings to real
 itemDB = ds_grid_number_strings_to_real(itemDB);
@@ -108,11 +111,14 @@ for (var r = 0; r < hh; r++){
 // Convert all effects from string to enum value
 for (var r = 0; r < hh; r++){
 	switch (itemDB[# idb.effect, r]){
-		case "none":			itemDB[# idb.effect, r] = itemEffect.none;
-		case "augmentAttack":	itemDB[# idb.effect, r] = itemEffect.augmentAttack;
-		case "augmentDefence":	itemDB[# idb.effect, r] = itemEffect.augmentDefence;
-		case "heal":			itemDB[# idb.effect, r] = itemEffect.heal;
-		case "teleHome":		itemDB[# idb.effect, r] = itemEffect.teleHome;
-		case "illuminate":		itemDB[# idb.effect, r] = itemEffect.illuminate;
+		case "none":			itemDB[# idb.effect, r] = itemEffect.none;				break;
+		case "weapon":			itemDB[# idb.effect, r] = itemEffect.weapon;			break;
+		case "armor":			itemDB[# idb.effect, r] = itemEffect.armor;				break;
+		case "shield":			itemDB[# idb.effect, r] = itemEffect.shield;			break;
+		case "heal":			itemDB[# idb.effect, r] = itemEffect.heal;				break;
+		case "teleHome":		itemDB[# idb.effect, r] = itemEffect.teleHome;			break;
+		case "illuminate":		itemDB[# idb.effect, r] = itemEffect.illuminate;		break;
+		case "augmentDefence":	itemDB[# idb.effect, r] = itemEffect.augmentDefence;	break;
+		case "unlock":			itemDB[# idb.effect, r] = itemEffect.unlock;			break;
 	}
 }

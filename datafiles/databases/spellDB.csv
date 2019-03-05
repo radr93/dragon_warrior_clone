@@ -1,0 +1,12 @@
+id,name,sprite,description,reqLevel,spellCost,usableInBattle,usableOutOfBattle,spellEffect,effectMin,effectMax
+0,Alleviate,spr_Alleviate,Chant a quick prayer to heal yourself for 10 to 17 HP.,3,4,true,true,heal,10,17
+1,Afflict,spr_Afflict,"Afflict your enemies with suffering, dealing 8 to 12 damage.",4,2,true,false,damage,8,12
+2,Entrance,spr_Entrance,"Attempt to entrace your enemies, putting them to sleep for 1 to 3 turns.",7,2,true,false,sleep,1,3
+3,Illuminate,spr_Illuminate,"Illuminate your path, eliminating the need to carry a torch.",9,3,false,true,illuminate,-1,-1
+4,Silence,spr_Silence,"Cast this spell on magic using foes to silence them, preventing spellcasting for 1 to 3 turns.",10,2,true,false,silence,1,3
+5,Weaken,spr_Weaken,Cast this spell to decrease your enemy's Attack Power and Defence by 25%.,10,6,true,false,debuff,-1,-1
+6,Teleout,spr_Teleout,Teleport to the entrance of caves.,12,6,false,true,teleOut,-1,-1
+7,Telehome,spr_Telehome,Teleport to your home.,13,8,false,true,teleHome,-1,-1
+8,Intimidate,spr_Intimidate,Intimidates all enemies you would encounter to flee on sight.,15,2,true,false,repel,127,-1
+9,Revivify,spr_Revivify,"Commune with the gods, healing yourself for 85 to 100 HP.",17,10,true,true,heal,85,100
+10,Destroy,spr_Destroy,"A devastating spell that decimates your enemies, dealing 58 to 65 damage.",19,5,true,false,damage,58,65
