@@ -1,37 +1,83 @@
-ob/// @description Handle Player Input
+// @description Handle Player Input
 
 // If the game is not paused
 if (!global.paused){
 	
-	// Only allow updating target if not already set
-	if (targetX == x and targetY == y){
-		// Set the player's destination
-		if (keyboard_check(input.up)){		//  Move up
-			sprite_index = spr_PlayerUp;
-			if (!place_meeting(x, y-moveSpeed, obj_SolidParent)){
-				targetY = y-moveSpeed;
+	// If the player isn't in battle
+	if (!global.inBattle){
+		// Only allow player to set movement destination if not already moving
+		if (targetX == x and targetY == y){
+		
+			// Move up
+			if (keyboard_check(input.up)){
+				sprite_index = spr_PlayerUp;
+			
+				// Don't move through walls
+				if (!place_meeting(x, y-moveSpeed, obj_SolidParent)){
+					targetY = y-moveSpeed;
+				
+					// Check for random encounter
+					var battle = obj_BattleController;
+					if (random(1) <= battle.encounterRate){
+						global.inBattle = true;
+					}
+				}
 			}
-		}
-		else if (keyboard_check(input.down)){	// Move down
-			sprite_index = spr_PlayerDown;
-			if (!place_meeting(x, y+moveSpeed, obj_SolidParent)){
-				targetY = y+moveSpeed;
+		
+			// Move Down
+			else if (keyboard_check(input.down)){
+				sprite_index = spr_PlayerDown;
+			
+				// Don't move through walls
+				if (!place_meeting(x, y+moveSpeed, obj_SolidParent)){
+					targetY = y+moveSpeed;
+				
+					// Check for random encounter
+					var battle = obj_BattleController;
+					if (random(1) <= battle.encounterRate){
+						global.inBattle = true;
+					}
+				}
 			}
-		}
-		else if (keyboard_check(input.left)){	// Move left
-			sprite_index = spr_PlayerLeft;
-			if (!place_meeting(x-moveSpeed, y, obj_SolidParent)){
-				targetX = x-moveSpeed;
+		
+			// Move Left
+			else if (keyboard_check(input.left)){
+				sprite_index = spr_PlayerLeft;
+			
+				// Don't move through walls
+				if (!place_meeting(x-moveSpeed, y, obj_SolidParent)){
+					targetX = x-moveSpeed;
+				
+					// Check for random encounter
+					var battle = obj_BattleController;
+					if (random(1) <= battle.encounterRate){
+						global.inBattle = true;
+					}
+				}
 			}
-		}
-		else if (keyboard_check(input.right)){	// Move right
-			sprite_index = spr_PlayerRight;
-			if (!place_meeting(x+moveSpeed, y, obj_SolidParent)){
-				targetX = x+moveSpeed;
+		
+			// Move Right
+			else if (keyboard_check(input.right)){
+				sprite_index = spr_PlayerRight;
+			
+				// Don't move through walls
+				if (!place_meeting(x+moveSpeed, y, obj_SolidParent)){
+					targetX = x+moveSpeed;
+				
+					// Check for random encounter
+					var battle = obj_BattleController;
+					if (random(1) <= battle.encounterRate){
+						global.inBattle = true;
+					}
+				}
 			}
 		}
 	}
-	else{
+	
+	// If the player isn't at their destination yet
+	if (targetX != x or targetY != y){
+		
+		// Move towards the destination
 		image_speed = 1.5;
 		if (targetY < y)		{	y-=4;	}
 		else if (targetY > y)	{	y+=4;	}

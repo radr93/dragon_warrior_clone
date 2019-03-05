@@ -2,3 +2,4 @@
 
 // Game
 global.paused = false;
+global.inBattle = false;

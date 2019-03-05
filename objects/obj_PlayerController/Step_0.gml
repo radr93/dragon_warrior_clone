@@ -41,3 +41,8 @@ if (keyboard_check_pressed(vk_insert)){
 if (keyboard_check_pressed(vk_pageup)){
 	stats[playerStat.mpCurrent] = stats[playerStat.mpMax];
 }
+
+// Leave battle
+if (keyboard_check_pressed(ord("B"))){
+	global.inBattle = false;
+}
