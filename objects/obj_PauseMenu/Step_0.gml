@@ -146,9 +146,35 @@ else{
 		itemList[itemCount] = "Back";
 		#endregion
 		
+		#region Create a text box for the item's description
+		
+		// Get textbox instance ID as local variable
+		if (!instance_exists(obj_TextBox)){
+			var textbox = instance_create_layer(x, y, "Controllers", obj_TextBox);
+		}
+		else{
+			var textbox = obj_TextBox;
+		}
+		
+		// Give textbox item descriptions
+		if (itemList[itemSelected] != "Back"){
+			index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemList[itemSelected]);
+			textbox.text = itemDB[# idb.description, index];
+		}
+		
+		// Give textbox back button description
+		else{
+			textbox.text = "Exit the item menu.";
+		}
+		
+		#endregion
+		
 		#region Down Key Pressed
 		if (keyboard_check_pressed(input.down) or keyboard_check_pressed(input.down2)){
-		
+			
+				// Clear textbox
+				textbox.text = "";
+				
 				// If you're not at the bottom of the options list
 				if (itemSelected < itemCount){
 				
@@ -168,7 +194,10 @@ else{
 
 		#region Up Key Pressed
 		if (keyboard_check_pressed(input.up) or keyboard_check_pressed(input.up2)){
-		
+			
+			// Clear textbox
+			textbox.text = "";
+			
 			// If you're not at the top of the options list
 			if (itemSelected > 0){
 			
@@ -187,13 +216,19 @@ else{
 		
 		#region Confirm Key Pressed
 		if (keyboard_check_pressed(input.confirm) or keyboard_check_pressed(input.confirm2)){
-					
+			
+			show_debug_message("itemList[itemSelected] == "+string(itemList[itemSelected]));
 			// If the back option is selected
 			if (itemList[itemSelected] == "Back"){
 				
+				// Destroy textbox
+				if (instance_exists(obj_TextBox)){
+					instance_destroy(obj_TextBox);
+				}
+				
 				// Close the item sub menu
 				itemSelected = 0;
-				inSubMenu = false;
+				inSubMenu = false;			
 			}
 			
 			// If an item is selected
@@ -257,6 +292,11 @@ else{
 			// No longer in sub menu
 			itemSelected = 0;
 			inSubMenu = false;
+			
+			// Destroy textbox
+			if (instance_exists(obj_TextBox)){
+				instance_destroy(obj_TextBox);
+			}
 		}
 		#endregion
 	}
@@ -267,7 +307,7 @@ else{
 	#region Spell Sub-Menu
 	else if (optionSelected == optionsList.spells){
 				
-		#region Check what items the player has
+		#region Check what spells the player has
 		
 		var player, spellCount, spellList;
 		player = obj_PlayerController;	// Get player as shorthand variable
@@ -292,9 +332,35 @@ else{
 		spellList[spellCount] = "Back";
 		#endregion
 		
+		#region Create a text box for the item's description
+		
+		// Get textbox instance ID as local variable
+		if (!instance_exists(obj_TextBox)){
+			var textbox = instance_create_layer(x, y, "Controllers", obj_TextBox);
+		}
+		else{
+			var textbox = obj_TextBox;
+		}
+		
+		// Give textbox item descriptions
+		if (spellList[spellSelected] != "Back"){
+			index = ds_grid_value_y(spellDB, 0, 1, 0, gridHeight-1, spellList[spellSelected]);
+			textbox.text = spellDB[# sdb.description, index];
+		}
+		
+		// Give textbox back button description
+		else{
+			textbox.text = "Exit the item menu.";
+		}
+		
+		#endregion
+		
 		#region Down Key Pressed
 		if (keyboard_check_pressed(input.down) or keyboard_check_pressed(input.down2)){
-		
+				
+				// Clear textbox
+				textbox.text = "";
+				
 				// If you're not at the bottom of the options list
 				if (spellSelected < spellCount){
 				
@@ -314,7 +380,10 @@ else{
 
 		#region Up Key Pressed
 		if (keyboard_check_pressed(input.up) or keyboard_check_pressed(input.up2)){
-		
+
+			// Clear textbox
+			textbox.text = "";
+			
 			// If you're not at the top of the options list
 			if (spellSelected > 0){
 			
@@ -340,6 +409,11 @@ else{
 				// Close the spell sub menu
 				spellSelected = 0;
 				inSubMenu = false;
+				
+				// Destroy textbox
+				if (instance_exists(obj_TextBox)){
+					instance_destroy(obj_TextBox);
+				}
 			}
 			
 			// If an spell is selected
@@ -417,6 +491,11 @@ else{
 			// No longer in sub menu
 			spellSelected = 0;
 			inSubMenu = false;
+			
+			// Destroy textbox
+			if (instance_exists(obj_TextBox)){
+				instance_destroy(obj_TextBox);
+			}
 		}
 		#endregion
 	}
@@ -455,9 +534,35 @@ else{
 		itemList[itemCount] = "Back";
 		#endregion
 		
+		#region Create a text box for the item's description
+		
+		// Get textbox instance ID as local variable
+		if (!instance_exists(obj_TextBox)){
+			var textbox = instance_create_layer(x, y, "Controllers", obj_TextBox);
+		}
+		else{
+			var textbox = obj_TextBox;
+		}
+		
+		// Give textbox item descriptions
+		if (itemList[itemSelected] != "Back"){
+			index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemList[itemSelected]);
+			textbox.text = itemDB[# idb.description, index];
+		}
+		
+		// Give textbox back button description
+		else{
+			textbox.text = "Exit the item menu.";
+		}
+		
+		#endregion
+			
 		#region Down Key Pressed
 		if (keyboard_check_pressed(input.down) or keyboard_check_pressed(input.down2)){
-		
+				
+				// Clear textbox
+				textbox.text = "";
+			
 				// If you're not at the bottom of the options list
 				if (equipSelected < itemCount){
 				
@@ -477,7 +582,10 @@ else{
 
 		#region Up Key Pressed
 		if (keyboard_check_pressed(input.up) or keyboard_check_pressed(input.up2)){
-		
+			
+			// Clear textbox
+			textbox.text = "";
+			
 			// If you're not at the top of the options list
 			if (equipSelected > 0){
 			
@@ -503,6 +611,11 @@ else{
 				// Close the item sub menu
 				equipSelected = 0;
 				inSubMenu = false;
+				
+				// Destroy textbox
+				if (instance_exists(obj_TextBox)){
+					instance_destroy(obj_TextBox);
+				}
 			}
 			
 			// If an item is selected
@@ -534,13 +647,18 @@ else{
 		
 		
 		#endregion
-		
+			
 		#region Back Key Pressed
 		if (keyboard_check_pressed(input.back) or keyboard_check_pressed(input.back2)){
 		
 			// No longer in sub menu
 			equipSelected = 0;
 			inSubMenu = false;
+			
+			// Destroy textbox
+			if (instance_exists(obj_TextBox)){
+				instance_destroy(obj_TextBox);
+			}
 		}
 		#endregion
 	}

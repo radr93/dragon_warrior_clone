@@ -62,7 +62,14 @@ enum enemyStat{
 	xpPerKill,
 	minGoldDrop,
 	maxGoldDrop,
-	
+	alleviate,
+	afflict,
+	entrance,
+	silence,
+	weaken,
+	destroy,
+	revivify,
+
 	MAX
 }
 #endregion
@@ -77,10 +84,20 @@ enum edb{
 	hp,
 	attackPower,
 	defence,
-	attackSpeed,
+	agility,
+	dodge,
 	xpPerKill,
 	minGoldDrop,
 	maxGoldDrop,
+	alleviate,
+	afflict,
+	entrance,
+	silence,
+	weaken,
+	destroy,
+	revivify,
+	flameBreath,
+	superBreath,
 	
 	MAX
 }

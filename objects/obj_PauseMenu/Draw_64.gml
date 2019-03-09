@@ -161,20 +161,6 @@ if (inSubMenu){
 		draw_set_color(c_white);
 		draw_rectangle(x1, y1, x2, y2, true);
 		
-		// Get size of description box
-		var x1, y1, x2, y2;
-		x1 = 32;	// Left side of description box
-		y1 = 384;	// Top of description box
-		x2 = 991;	// Right side of description box
-		y2 = 543;	// Bottom of description box
-
-		// Draw the backdrop of the description box
-		draw_set_color(c_black);
-		draw_rectangle(x1, y1, x2, y2, false);
-
-		// Draw the outline of the description box
-		draw_set_color(c_white);
-		draw_rectangle(x1, y1, x2, y2, true);
 		#endregion
 		
 		#region Draw Item List text and item index arrow
@@ -242,14 +228,6 @@ if (inSubMenu){
 		itemList[itemCount] = "Back";
 		draw_text(xx-32, yy, "Back");
 		
-		if (itemList[itemSelected] != "Back"){
-			index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemList[itemSelected]);
-			draw_text(64, 416, itemDB[# idb.description, index]);
-		}
-		else{
-			draw_text(64, 416, "Exit the item menu.");
-		}
-		
 		#endregion		
 	
 	}
@@ -276,21 +254,7 @@ if (inSubMenu){
 		// Draw the outline of the spells menu
 		draw_set_color(c_white);
 		draw_rectangle(x1, y1, x2, y2, true);
-		
-		// Get size of description box
-		var x1, y1, x2, y2;
-		x1 = 32;	// Left side of description box
-		y1 = 384;	// Top of description box
-		x2 = 991;	// Right side of description box
-		y2 = 543;	// Bottom of description box
-
-		// Draw the backdrop of the description box
-		draw_set_color(c_black);
-		draw_rectangle(x1, y1, x2, y2, false);
-
-		// Draw the outline of the description box
-		draw_set_color(c_white);
-		draw_rectangle(x1, y1, x2, y2, true);
+	
 		#endregion
 		
 		#region Draw Spell List text and spell index arrow
@@ -355,14 +319,6 @@ if (inSubMenu){
 		spellList[spellCount] = "Back";
 		draw_text(xx-32, yy, "Back");
 		
-		if (spellList[spellSelected] != "Back"){
-			index = ds_grid_value_y(spellDB, 0, 1, 0, gridHeight-1, spellList[spellSelected]);
-			draw_text(64, 416, spellDB[# sdb.description, index]);
-		}
-		else{
-			draw_text(64, 416, "Exit the spell menu.");
-		}
-		
 		#endregion		
 	
 	}	
@@ -390,20 +346,6 @@ if (inSubMenu){
 		draw_set_color(c_white);
 		draw_rectangle(x1, y1, x2, y2, true);
 		
-		// Get size of description box
-		var x1, y1, x2, y2;
-		x1 = 32;	// Left side of description box
-		y1 = 384;	// Top of description box
-		x2 = 991;	// Right side of description box
-		y2 = 543;	// Bottom of description box
-
-		// Draw the backdrop of the description box
-		draw_set_color(c_black);
-		draw_rectangle(x1, y1, x2, y2, false);
-
-		// Draw the outline of the description box
-		draw_set_color(c_white);
-		draw_rectangle(x1, y1, x2, y2, true);
 		#endregion
 		
 		#region Draw Equip List text and equip index arrow
@@ -500,14 +442,6 @@ if (inSubMenu){
 		}
 		itemList[itemCount] = "Back";
 		draw_text(xx-32, yy, "Back");
-		
-		if (itemList[equipSelected] != "Back"){
-			index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemList[equipSelected]);
-			draw_text(64, 416, itemDB[# idb.description, index]);
-		}
-		else{
-			draw_text(64, 416, "Exit the item menu.");
-		}
 		
 		#endregion		
 	

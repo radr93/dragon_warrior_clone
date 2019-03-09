@@ -12,7 +12,7 @@
         "9df746e5-c72f-4cb4-bbb4-d83852bf4349"
     ],
     "filterType": "GMSprite",
-    "folderName": "Equip Menu",
+    "folderName": "Equip Submenu Icons",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -7,7 +7,7 @@
         "19ab244a-ac71-429c-959a-415e24807051"
     ],
     "filterType": "GMSprite",
-    "folderName": "Environment",
+    "folderName": "Overworld",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

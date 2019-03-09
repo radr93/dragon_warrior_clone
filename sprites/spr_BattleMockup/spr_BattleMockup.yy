@@ -7,8 +7,8 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 543,
-    "bbox_left": 33,
-    "bbox_right": 992,
+    "bbox_left": 32,
+    "bbox_right": 991,
     "bbox_top": 32,
     "bboxmode": 0,
     "colkind": 1,
@@ -41,12 +41,19 @@
                     "mvc": "1.0",
                     "FrameId": "4a083954-9991-416a-83c3-5520cb2d4e53",
                     "LayerId": "f6acbc63-53b2-44bf-b587-f9199c4153a6"
+                },
+                {
+                    "id": "bb519691-bb76-4f7b-aa52-a332e1fe4535",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "4a083954-9991-416a-83c3-5520cb2d4e53",
+                    "LayerId": "9788a8cc-4d15-4a41-af46-331fe4a8d780"
                 }
             ]
         }
     ],
-    "gridX": 32,
-    "gridY": 32,
+    "gridX": 8,
+    "gridY": 8,
     "height": 576,
     "layers": [
         {
@@ -57,6 +64,17 @@
             "blendMode": 0,
             "isLocked": false,
             "name": "monsters",
+            "opacity": 100,
+            "visible": true
+        },
+        {
+            "id": "9788a8cc-4d15-4a41-af46-331fe4a8d780",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "a65a7aa4-23b9-40cf-b626-3f7d4d1c7956",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "text",
             "opacity": 100,
             "visible": true
         },
