@@ -1,10 +1,10 @@
 /// @description Draw the Pause Menu
 
-// If not in a sub menu (cycle through options list)
+// Always draw the options list
 #region Options list
 
-// Draw the options list
 #region Draw the options list backdrop
+
 // Get size of options list
 var x1, y1, x2, y2;
 x1 = 16;	// Left side of options list
@@ -12,16 +12,13 @@ y1 = 16;	// Top of options list
 x2 = 127;	// Right side of options list
 y2 = 191;	// Bottom of options list
 
-// Draw the backdrop of the options list
-draw_set_color(c_black);
-draw_rectangle(x1, y1, x2, y2, false);
+// Draw the options menu backdrop
+scr_draw_ui_box(x1, y1, x2, y2, c_black, c_white, 0.7);
 
-// Draw the outline of the options list
-draw_set_color(c_white);
-draw_rectangle(x1, y1, x2, y2, true);
 #endregion
 
 #region Draw the options list text
+
 // Initialize Variables
 var xx, yy;
 xx = 64;
@@ -76,6 +73,7 @@ if (inSubMenu){
 	if (optionSelected == optionsList.status){
 		
 		#region Backdrop
+		
 		// Get size of status menu
 		var x1, y1, x2, y2;
 		x1 = 144;	// Left side of status menu
@@ -83,13 +81,9 @@ if (inSubMenu){
 		x2 = 543;	// Right side of status menu
 		y2 = 191;	// Bottom of status menu
 
-		// Draw the backdrop of the status menu
-		draw_set_color(c_black);
-		draw_rectangle(x1, y1, x2, y2, false);
-
-		// Draw the outline of the status menu
-		draw_set_color(c_white);
-		draw_rectangle(x1, y1, x2, y2, true);
+		// Draw the status menu backdrop
+		scr_draw_ui_box(x1, y1, x2, y2, c_black, c_white, 0.7);
+		
 		#endregion
 		
 		#region Draw the Status list text
@@ -153,13 +147,8 @@ if (inSubMenu){
 		x2 = 703;	// Right side of item menu
 		y2 = 351;	// Bottom of item menu
 
-		// Draw the backdrop of the item menu
-		draw_set_color(c_black);
-		draw_rectangle(x1, y1, x2, y2, false);
-
-		// Draw the outline of the item menu
-		draw_set_color(c_white);
-		draw_rectangle(x1, y1, x2, y2, true);
+		// Draw the item menu backdrop
+		scr_draw_ui_box(x1, y1, x2, y2, c_black, c_white, 0.7);
 		
 		#endregion
 		
@@ -247,13 +236,8 @@ if (inSubMenu){
 		x2 = 671;	// Right side of spells menu
 		y2 = 223;	// Bottom of spells menu
 
-		// Draw the backdrop of the spells menu
-		draw_set_color(c_black);
-		draw_rectangle(x1, y1, x2, y2, false);
-
-		// Draw the outline of the spells menu
-		draw_set_color(c_white);
-		draw_rectangle(x1, y1, x2, y2, true);
+		// Draw the spells menu backdrop
+		scr_draw_ui_box(x1, y1, x2, y2, c_black, c_white, 0.7);
 	
 		#endregion
 		
@@ -338,13 +322,8 @@ if (inSubMenu){
 		x2 = 735;	// Right side of equip menu
 		y2 = 351;	// Bottom of equip menu
 
-		// Draw the backdrop of the equip menu
-		draw_set_color(c_black);
-		draw_rectangle(x1, y1, x2, y2, false);
-
-		// Draw the outline of the equip menu
-		draw_set_color(c_white);
-		draw_rectangle(x1, y1, x2, y2, true);
+		// Draw the equip menu backdrop
+		scr_draw_ui_box(x1, y1, x2, y2, c_black, c_white, 0.7);
 		
 		#endregion
 		

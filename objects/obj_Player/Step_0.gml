@@ -9,7 +9,7 @@ if (!global.paused){
 		if (targetX == x and targetY == y){
 		
 			// Move up
-			if (keyboard_check(input.up)){
+			if (keyboard_check(input.up) or keyboard_check(input.up2)){
 				sprite_index = spr_PlayerUp;
 			
 				// Don't move through walls
@@ -25,7 +25,7 @@ if (!global.paused){
 			}
 		
 			// Move Down
-			else if (keyboard_check(input.down)){
+			else if (keyboard_check(input.down) or keyboard_check(input.down2)){
 				sprite_index = spr_PlayerDown;
 			
 				// Don't move through walls
@@ -41,7 +41,7 @@ if (!global.paused){
 			}
 		
 			// Move Left
-			else if (keyboard_check(input.left)){
+			else if (keyboard_check(input.left) or keyboard_check(input.left2)){
 				sprite_index = spr_PlayerLeft;
 			
 				// Don't move through walls
@@ -57,7 +57,7 @@ if (!global.paused){
 			}
 		
 			// Move Right
-			else if (keyboard_check(input.right)){
+			else if (keyboard_check(input.right) or keyboard_check(input.right2)){
 				sprite_index = spr_PlayerRight;
 			
 				// Don't move through walls

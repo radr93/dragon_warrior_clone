@@ -4,7 +4,7 @@
 #region Enumerate Item IDs
 enum itemID{
 	#region Weapons
-	bambooPole,
+	walkingStick,
 	club,
 	shortSword,
 	handAxe,

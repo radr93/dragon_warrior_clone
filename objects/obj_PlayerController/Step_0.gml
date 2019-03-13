@@ -9,14 +9,20 @@ while (stats[playerStat.xpCurrent] >= stats[playerStat.xpMax]){
 	stats[playerStat.level]++;
 	
 	// Update required experience and stats
-	var levelDB = obj_LevelDatabase.levelDB;
-	var index = ds_grid_value_y(levelDB, 0, 1, 0, ds_grid_height(levelDB)-1, stats[playerStat.level]);
+	var levelDB, index, xpGain, hpGain, mpGain, strGain, agiGain;
+	levelDB = obj_LevelDatabase.levelDB;
+	index = ds_grid_value_y(levelDB, 0, 1, 0, ds_grid_height(levelDB)-1, stats[playerStat.level]);
+	xpGain = levelDB[# ldb.experience, index];
+	hpGain = levelDB[# ldb.hpMax, index];
+	mpGain = levelDB[# ldb.mpMax, index];
+	strGain = levelDB[# ldb.strength, index];
+	agiGain = levelDB[# ldb.agility, index];
 	
-	stats[playerStat.xpMax] += levelDB[# ldb.experience, index];
-	stats[playerStat.hpMax] = levelDB[# ldb.hpMax, index];
-	stats[playerStat.mpMax] = levelDB[# ldb.mpMax, index];
-	stats[playerStat.strength] = levelDB[# ldb.strength, index];
-	stats[playerStat.agility] = levelDB[# ldb.agility, index];
+	stats[playerStat.xpMax] += xpGain;
+	stats[playerStat.hpMax] = hpGain;
+	stats[playerStat.mpMax] = mpGain;
+	stats[playerStat.strength] = strGain;
+	stats[playerStat.agility] = agiGain;
 	
 	// See if any new spells can be learned
 	if (levelDB[# ldb.newSpell, index] != -1){
@@ -34,7 +40,7 @@ stats[playerStat.defence] = player_get_defence();
 // Break the game
 // Increase XP
 if (keyboard_check_pressed(vk_insert)){
-	stats[playerStat.xpCurrent] += 100;
+	stats[playerStat.xpCurrent] += 137;
 }
 
 // Increase MP

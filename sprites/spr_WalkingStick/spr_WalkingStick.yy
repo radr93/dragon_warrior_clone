@@ -2,7 +2,7 @@
     "id": "090dab25-8c24-4f18-b6c0-8da2e10bc36c",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_BambooPole",
+    "name": "spr_WalkingStick",
     "For3D": false,
     "HTile": false,
     "VTile": false,

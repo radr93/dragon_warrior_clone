@@ -90,7 +90,7 @@
             "Key": "090dab25-8c24-4f18-b6c0-8da2e10bc36c",
             "Value": {
                 "id": "ff0ddf1c-b8f5-42a3-bcc1-c2c7f4d64e6d",
-                "resourcePath": "sprites\\spr_BambooPole\\spr_BambooPole.yy",
+                "resourcePath": "sprites\\spr_WalkingStick\\spr_WalkingStick.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -439,6 +439,22 @@
             }
         },
         {
+            "Key": "453834cd-fb7b-4b20-bb75-95f4e31b9590",
+            "Value": {
+                "id": "7143f81d-f952-4e34-836b-6e6d02eee316",
+                "resourcePath": "views\\453834cd-fb7b-4b20-bb75-95f4e31b9590.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "45c5f75d-3272-4577-ba8a-88b863117e2a",
+            "Value": {
+                "id": "2f1e0edc-4274-42df-abfb-33ebcf26566a",
+                "resourcePath": "datafiles_yy\\databases\\enemySpellDB.csv.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "4604c451-c61d-4824-a571-da58f396bd4e",
             "Value": {
                 "id": "aedc97ef-92de-422a-80c6-a0310613a6f7",
@@ -751,6 +767,14 @@
             }
         },
         {
+            "Key": "74f4c814-4f37-4507-a196-5d68be2198ae",
+            "Value": {
+                "id": "940ac2aa-0d73-4431-8ee4-438e719ec7ff",
+                "resourcePath": "scripts\\scr_draw_ui_box\\scr_draw_ui_box.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "76834c3f-7ea0-4596-9ce7-68f61f57fb88",
             "Value": {
                 "id": "456f45c8-133d-4036-9e96-bc79ccabf9d4",
@@ -887,6 +911,14 @@
             }
         },
         {
+            "Key": "8e0e6957-1196-4a47-b42b-f56e28893732",
+            "Value": {
+                "id": "dc736982-a330-4dcd-8afd-e9f246a41ce9",
+                "resourcePath": "views\\8e0e6957-1196-4a47-b42b-f56e28893732.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "8ed3a2ef-6e20-4158-bf39-3300ae438bdf",
             "Value": {
                 "id": "740913aa-2710-44e1-831c-91e395326f86",
@@ -980,6 +1012,14 @@
                 "id": "fa0acbbc-e804-42b7-8898-c6cb1a365a57",
                 "resourcePath": "sprites\\spr_FullPlate\\spr_FullPlate.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "a4344b7d-a39a-4905-be08-b3180d6fdba2",
+            "Value": {
+                "id": "99c0b2ae-cdff-4f28-bf0a-dfa210aee707",
+                "resourcePath": "scripts\\scr_battle_reset_variables\\scr_battle_reset_variables.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1143,6 +1183,14 @@
             }
         },
         {
+            "Key": "d01fca6e-4cb9-4661-b66d-2f9dfbbd0519",
+            "Value": {
+                "id": "c2e1b75b-228f-4fa8-a93c-65f6c70b6901",
+                "resourcePath": "objects\\obj_EnemySpellDatabase\\obj_EnemySpellDatabase.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "d203ad17-1a45-446f-b772-39a214754d73",
             "Value": {
                 "id": "98198b93-164f-4020-8317-bb5388c9e90f",
@@ -1187,6 +1235,14 @@
             "Value": {
                 "id": "6ee1a694-cf78-4e2a-b902-258aa78b9b3c",
                 "resourcePath": "views\\dd7273df-b1e5-4d73-888e-ad2fdb666f28.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e1b81105-467e-40c9-b940-c87487beea22",
+            "Value": {
+                "id": "c4686183-8ba9-4b7a-b24a-48f729d18b01",
+                "resourcePath": "views\\e1b81105-467e-40c9-b940-c87487beea22.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1368,10 +1424,12 @@
         }
     ],
     "script_order": [
+        "a4344b7d-a39a-4905-be08-b3180d6fdba2",
         "15919fef-6c99-4dd8-89fd-0b42de67455b",
-        "5420874b-4f6b-4ed6-9689-d4c8616ae7ae",
         "18607330-d302-4cb7-b197-478f760f8e01",
-        "fc816d81-6119-45b9-8e4a-0f41318feb9c"
+        "fc816d81-6119-45b9-8e4a-0f41318feb9c",
+        "74f4c814-4f37-4507-a196-5d68be2198ae",
+        "5420874b-4f6b-4ed6-9689-d4c8616ae7ae"
     ],
     "tutorial": ""
 }

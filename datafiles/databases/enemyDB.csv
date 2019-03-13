@@ -1,41 +1,41 @@
-id,name,sprite,level,hp,attackPower,defence,agility,dodge,xpPerKill,minGoldDrop,maxGoldDrop,alleviate,afflict,entrance,silence,weaken,destroy,revivify,fireBreath,fireBreath
-0,Slime,spr_Slime,2,3,5,3,15,1,1,1,1,-1,Not dangerous attack,-1,-1,-1,-1,-1,-1,-1
-1,Red Slime,spr_RedSlime,2,4,7,3,15,1,1,2,2,-1,Not dangerous attack,-1,-1,-1,-1,-1,-1,-1
-2,Metal Slime,spr_MetalSlime,24,4,10,255,255,1,115,6,6,-1,-1,-1,-1,-1,-1,-1,-1,-1
-3,Drakee,spr_Drakee,3,6,9,6,15,1,2,2,2,-1,-1,-1,-1,-1,-1,-1,-1,-1
-4,Magidrakee,spr_Magidrakee,6,15,14,14,15,1,5,12,12,-1,-1,-1,-1,-1,-1,-1,-1,-1
-5,Drakeema,spr_Drakeema,9,20,22,25,32,6,11,20,20,-1,-1,-1,-1,-1,-1,-1,-1,-1
-6,Druin,spr_Druin,9,22,22,18,15,2,7,15,15,-1,-1,-1,-1,-1,-1,-1,-1,-1
-7,Druinlord,spr_Druinlord,17,35,47,40,240,4,20,85,85,-1,-1,-1,-1,-1,-1,-1,-1,-1
-8,Scorpion,spr_Scorpion,8,20,18,15,15,1,6,16,16,-1,-1,-1,-1,-1,-1,-1,-1,-1
-9,Metal Scorpion,spr_MetalScorpion,13,22,36,42,15,2,14,40,40,-1,-1,-1,-1,-1,-1,-1,-1,-1
-10,Rogue Scorpion,spr_RogueScorpion,23,35,60,90,127,2,26,110,110,-1,-1,-1,-1,-1,-1,-1,-1,-1
-11,Magician,spr_Magician,5,12,11,12,15,1,4,11,11,-1,-1,-1,-1,-1,-1,-1,-1,-1
-12,Warlock,spr_Warlock,12,30,28,22,49,2,14,35,35,-1,-1,-1,-1,-1,-1,-1,-1,-1
-13,Wizard,spr_Wizard,30,65,80,70,247,2,50,65,65,-1,-1,-1,-1,-1,-1,-1,-1,-1
-14,Droll,spr_Droll,10,25,24,24,14,2,10,25,25,-1,-1,-1,-1,-1,-1,-1,-1,-1
-15,Drollmagi,spr_Drollmagi,19,38,52,50,34,1,22,90,90,-1,-1,-1,-1,-1,-1,-1,-1,-1
-16,Ghost,spr_Ghost,4,7,11,8,15,4,8,4,4,-1,-1,-1,-1,-1,Dangerous Attack,-1,-1,-1
-17,Poltergeist,spr_Poltergeist,8,23,18,15,20,6,7,18,18,-1,-1,-1,-1,-1,-1,-1,-1,-1
-18,Specter,spr_Specter,16,36,40,38,49,4,18,70,70,-1,-1,-1,-1,-1,-1,-1,-1,-1
-19,Wyvern,spr_Wyvern,20,42,55,48,79,2,24,100,100,-1,-1,-1,-1,-1,-1,-1,-1,-1
-20,Magiwyvern,spr_Magiwyvern,28,58,78,68,32,2,34,140,140,-1,-1,-1,-1,-1,-1,-1,-1,-1
-21,Starwyvern,spr_Starwyvern,32,65,85,80,128,2,43,150,150,-1,-1,-1,-1,-1,-1,-1,-1,-1
-22,Wolf,spr_Wolf,15,34,40,30,31,2,16,45,45,-1,-1,-1,-1,-1,-1,-1,-1,-1
-23,Wolflord,spr_Wolflord,18,38,50,36,71,2,20,80,80,-1,-1,-1,-1,-1,-1,-1,-1,-1
-24,Werewolf,spr_Werewolf,30,60,85,70,127,7,40,155,155,-1,-1,-1,-1,-1,-1,-1,-1,-1
-25,Knight,spr_Knight,28,55,75,78,103,1,33,150,150,-1,-1,-1,-1,-1,-1,-1,-1,-1
-26,Axe Knight,spr_AxeKnight,34,70,94,82,243,1,54,165,165,-1,-1,-1,-1,-1,Dark Magic,Dark Healing,-1,-1
-27,Armored Knight,spr_ArmoredKnight,40,90,105,86,147,2,70,140,140,-1,-1,-1,-1,-1,Dark Magic,Dark Healing,-1,-1
-28,Skeleton,spr_Skeleton,12,30,28,22,15,4,11,30,30,-1,-1,-1,-1,-1,-1,-1,-1,-1
-29,Wraith,spr_Wraith,16,36,44,34,112,4,17,60,60,-1,-1,-1,-1,-1,-1,-1,-1,-1
-30,Wraith Knight,spr_WraithKnight,24,46,68,55,80,4,28,120,120,-1,-1,-1,-1,-1,-1,-1,-1,-1
-31,Demon Knight,spr_DemonKnight,27,50,79,64,255,15,37,150,150,-1,-1,-1,-1,-1,-1,-1,-1,-1
-32,Goldman,spr_Goldman,20,50,48,40,223,1,6,210,210,-1,-1,-1,-1,-1,-1,-1,-1,-1
-33,Golem,spr_Golem,37,70,120,60,255,0,5,10,10,-1,-1,-1,-1,-1,-1,-1,-1,-1
-34,Stoneman,spr_Stoneman,47,160,100,40,47,1,65,140,140,-1,-1,-1,-1,-1,-1,-1,-1,-1
-35,Green Dragon,spr_GreenDragon,32,65,88,74,127,2,45,110,110,-1,-1,-1,-1,-1,-1,-1,Flame Breath,-1
-36,Blue Dragon,spr_BlueDragon,35,70,98,84,255,2,60,150,150,-1,-1,-1,-1,-1,-1,-1,Flame Breath,-1
-37,Red Dragon,spr_RedDragon,44,100,120,90,247,2,100,140,140,-1,-1,-1,-1,-1,-1,-1,Flame Breath,-1
-38,Dragonlord,spr_Dragonlord1,46,100,130,95,255,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
-39,Dragonlord,spr_Dragonlord2,55,130,145,105,255,0,207,1643,1643,-1,-1,-1,-1,-1,-1,-1,-1,Infernal Breath
+id,name,sprite,level,hp,attackPower,defence,agility,dodge,xpPerKill,minGoldDrop,maxGoldDrop,alleviate,afflict,Entrance,Silence,Weaken,destroy,revivify,fireBreath,fireBreath
+0,Slime,spr_Slime,2,6,5,3,15,1,3,1,3,Weak Heal,-1,-1,-1,-1,-1,Strong Heal,-1,-1
+1,Red Slime,spr_RedSlime,2,8,7,3,15,1,3,2,6,-1,-1,Entrance,Silence,Weaken,-1,-1,-1,-1
+2,Metal Slime,spr_MetalSlime,24,4,10,255,255,1,245,6,18,-1,-1,-1,-1,-1,-1,-1,-1,-1
+3,Drakee,spr_Drakee,3,12,9,6,15,1,8,2,6,-1,-1,Entrance,Silence,Weaken,-1,-1,-1,-1
+4,Magidrakee,spr_Magidrakee,6,30,14,14,15,1,15,12,36,-1,-1,-1,-1,-1,-1,-1,-1,-1
+5,Drakeema,spr_Drakeema,9,40,22,25,32,6,33,20,60,-1,-1,-1,-1,-1,-1,-1,-1,-1
+6,Druin,spr_Druin,9,22,22,18,15,2,21,15,45,-1,-1,-1,-1,-1,-1,-1,-1,-1
+7,Druinlord,spr_Druinlord,17,35,47,40,240,4,20,85,255,-1,-1,-1,-1,-1,-1,-1,-1,-1
+8,Scorpion,spr_Scorpion,8,20,18,15,15,1,18,16,48,-1,-1,-1,-1,-1,-1,-1,-1,-1
+9,Metal Scorpion,spr_MetalScorpion,13,22,36,42,15,2,42,40,120,-1,-1,-1,-1,-1,-1,-1,-1,-1
+10,Rogue Scorpion,spr_RogueScorpion,23,35,60,90,127,2,78,110,330,-1,-1,-1,-1,-1,-1,-1,-1,-1
+11,Magician,spr_Magician,5,12,11,12,15,1,12,11,33,-1,Strange Magic,-1,-1,-1,-1,-1,-1,-1
+12,Warlock,spr_Warlock,12,30,28,22,49,2,42,35,105,-1,Evil Magic,-1,-1,-1,-1,-1,-1,-1
+13,Wizard,spr_Wizard,30,65,80,70,247,2,150,65,195,-1,-1,-1,-1,-1,Destuctive Magic,-1,-1,-1
+14,Droll,spr_Droll,10,25,24,24,14,2,30,25,75,-1,-1,-1,-1,-1,-1,-1,-1,-1
+15,Drollmagi,spr_Drollmagi,19,38,52,50,34,1,66,90,270,-1,-1,-1,-1,-1,-1,-1,-1,-1
+16,Ghost,spr_Ghost,4,8,11,8,15,4,24,4,12,-1,Evil Magic,-1,-1,-1,Destuctive Magic,-1,-1,-1
+17,Poltergeist,spr_Poltergeist,8,23,18,15,20,6,21,18,54,-1,-1,-1,-1,-1,-1,-1,-1,-1
+18,Specter,spr_Specter,16,36,40,38,49,4,54,70,210,-1,-1,-1,-1,-1,-1,-1,-1,-1
+19,Wyvern,spr_Wyvern,20,42,55,48,79,2,72,100,300,-1,-1,-1,-1,-1,-1,-1,-1,-1
+20,Magiwyvern,spr_Magiwyvern,28,58,78,68,32,2,102,140,420,-1,-1,-1,-1,-1,-1,-1,-1,-1
+21,Starwyvern,spr_Starwyvern,32,65,85,80,128,2,129,150,450,-1,-1,-1,-1,-1,-1,-1,-1,-1
+22,Wolf,spr_Wolf,15,34,40,30,31,2,48,45,135,-1,-1,-1,-1,-1,-1,-1,-1,-1
+23,Wolflord,spr_Wolflord,18,38,50,36,71,2,60,80,240,-1,-1,-1,-1,-1,-1,-1,-1,-1
+24,Werewolf,spr_Werewolf,30,60,85,70,127,7,120,155,465,-1,-1,-1,-1,-1,-1,-1,-1,-1
+25,Knight,spr_Knight,28,55,75,78,103,1,99,150,450,-1,-1,-1,-1,-1,-1,-1,-1,-1
+26,Axe Knight,spr_AxeKnight,34,70,94,82,243,1,162,165,495,-1,-1,-1,-1,-1,Dark Magic,Dark Healing,-1,-1
+27,Armored Knight,spr_ArmoredKnight,40,90,105,86,147,2,210,140,420,-1,-1,-1,-1,-1,Dark Magic,Dark Healing,-1,-1
+28,Skeleton,spr_Skeleton,12,30,28,22,15,4,33,30,90,-1,-1,-1,-1,-1,-1,-1,-1,-1
+29,Wraith,spr_Wraith,16,36,44,34,112,4,51,60,180,-1,-1,-1,-1,-1,-1,-1,-1,-1
+30,Wraith Knight,spr_WraithKnight,24,46,68,55,80,4,84,120,360,-1,-1,-1,-1,-1,-1,-1,-1,-1
+31,Demon Knight,spr_DemonKnight,27,50,79,64,255,15,111,150,450,-1,-1,-1,-1,-1,-1,-1,-1,-1
+32,Goldman,spr_Goldman,20,50,48,40,223,1,24,210,630,-1,-1,-1,-1,-1,-1,-1,-1,-1
+33,Golem,spr_Golem,37,70,120,60,255,0,2500,10,30,-1,-1,-1,-1,-1,-1,-1,-1,-1
+34,Stoneman,spr_Stoneman,47,160,100,40,47,1,65,140,420,-1,-1,-1,-1,-1,-1,-1,-1,-1
+35,Green Dragon,spr_GreenDragon,32,65,88,74,127,2,135,110,330,-1,-1,-1,-1,-1,-1,-1,Flame Breath,-1
+36,Blue Dragon,spr_BlueDragon,35,70,98,84,255,2,180,150,450,-1,-1,-1,-1,-1,-1,-1,Flame Breath,-1
+37,Red Dragon,spr_RedDragon,44,100,120,90,247,2,300,140,420,-1,-1,-1,-1,-1,-1,-1,Flame Breath,-1
+38,Dragonlord,spr_Dragonlord1,46,100,130,95,255,0,343,235,455,-1,-1,-1,-1,-1,-1,-1,-1,-1
+39,Dragonlord,spr_Dragonlord2,55,130,145,105,255,0,5404,465,1643,-1,-1,-1,-1,-1,-1,-1,-1,Infernal Breath

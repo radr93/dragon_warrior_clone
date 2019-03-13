@@ -1,5 +1,14 @@
 /// @description Check for input
 
+if(keyboard_check_pressed(vk_f1)){
+	if (!showDebug){
+		showDebug = true;
+	}
+	else{
+		showDebug = false;
+	}
+}
+
 #region Toggle Paused
 
 // If not in Main Menu

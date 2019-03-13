@@ -48,6 +48,7 @@ var levelDB = obj_LevelDatabase.levelDB;
 
 stats[playerStat.name] = "RADR";
 stats[playerStat.level] = 1;
+stats[playerStat.goldCount] = 100;
 stats[playerStat.xpMax] = 7;
 stats[playerStat.hpMax] = 15;
 stats[playerStat.hpCurrent] = stats[playerStat.hpMax];
@@ -64,7 +65,9 @@ for (var i = 0; i < itemID.MAX; i++){
 	items[i] = 0;
 }
 
-items[itemID.potion] +=6;
+items[itemID.potion] +=3;
+items[itemID.walkingStick] = 1;
+items[itemID.clothing] = 1;
 #endregion
 
 #region Initialize Player Spells
@@ -77,4 +80,6 @@ for (var s = 0; s < spellID.MAX; s++){
 for (var e = 0; e < equipSlot.MAX; e++){
 	equip[e] = -1;
 }
+equip[equipSlot.weapon] = itemID.walkingStick;
+equip[equipSlot.armor]	= itemID.clothing;
 #endregion

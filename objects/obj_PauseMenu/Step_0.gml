@@ -1,10 +1,10 @@
 /// @description Navigate menus
 
-// Options List
-#region Select from options list
-
-// If you're not already in a sub menu (i.e. in options list)
+/// OPTIONS MENU
+// If you're not already in a sub menu (i.e. selecting a choice in the options list)
 if (!inSubMenu){
+	
+	#region Navigate the options list
 	
 	#region Down Key Pressed
 	if (keyboard_check_pressed(input.down) or keyboard_check_pressed(input.down2)){
@@ -48,44 +48,20 @@ if (!inSubMenu){
 	#region Confirm Key Pressed
 	if (keyboard_check_pressed(input.confirm) or keyboard_check_pressed(input.confirm2)){
 	
-		// If you're not in a sub-menu
-		if (!inSubMenu){
-		
-			// Cycle through sub menus
-			switch (optionSelected){
-
-				case optionsList.close:
-					instance_destroy();
-					break;
-				default:
-					inSubMenu = true;
-					break;
-			}
-		}
-	
-		// If you're in a sub menu
-		else{
-		
-			// Cycle through sub menus
-			switch (optionSelected){
+		// Cycle through sub menus
+		switch (optionSelected){
 			
-				case optionsList.status:
+			// Close the pause menu if close is selected
+			case optionsList.close:
+				instance_destroy();
+				break;
 				
-					break;
-				case optionsList.items:
-				
-					break;
-				case optionsList.spells:
-				
-					break;
-				case optionsList.equip:
-				
-					break;
-				case optionsList.close:
-					instance_destroy();
-					break;
-			}
+			// If something else is selected, you're now "inSubMenu" for that "optionSelected"
+			default:
+				inSubMenu = true;
+				break;
 		}
+		
 	}
 	#endregion
 	
@@ -104,15 +80,15 @@ if (!inSubMenu){
 		instance_destroy();
 	}
 	#endregion
-
+	
+	#endregion
 }
-#endregion
 
-// Sub Menus
-#region Navigate the different sub menus
-
-// If you're in a sub menu
+/// SUB-MENUS
+// If you are in a sub menu (i.e. status, item, spell, equip)
 else{
+	
+	#region Navigate the different sub menus
 	
 	// Navigate the Item Sub-Menu
 	#region Item Sub-Menu
@@ -122,7 +98,7 @@ else{
 		
 		var player, itemCount, itemList;
 		player = obj_PlayerController;	// Get player as shorthand variable
-		itemCount = 0;
+		itemCount = 0;					// How many items the player has
 		
 		// Loop through player's items
 		for (var item = 0; item < itemID.MAX; item++){
@@ -130,20 +106,20 @@ else{
 			// If the player has 1 or more of an item in their inventory
 			if (player.items[item] > 0){
 				
-				// Look up the item ID in the item database
+				// Look up that item ID in the item database
 				var itemDB, gridHeight, index;
-				itemDB = obj_ItemDatabase.itemDB;		// The ds grid of the item database
-				gridHeight = ds_grid_height(itemDB);	// The height of the database grid				
-				index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, item);
+				itemDB = obj_ItemDatabase.itemDB;								// The ds grid of the item database
+				gridHeight = ds_grid_height(itemDB);							// The height of the database grid				
+				index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, item);	// The Y index of the item in the database
 				
 				// If the item isn't equipment
 				if (itemDB[# idb.equippable, index] == 0){
-					itemList[itemCount] = itemDB[# idb.id, index];
-					itemCount++;
+					itemList[itemCount] = itemDB[# idb.id, index];				// Store that item in a temporary array
+					itemCount++;												// Increment the number of items counted
 				}
 			}
 		}
-		itemList[itemCount] = "Back";
+		itemList[itemCount] = "Back";											// When done looping, the last entry is always "Back"
 		#endregion
 		
 		#region Create a text box for the item's description
@@ -159,12 +135,12 @@ else{
 		// Give textbox item descriptions
 		if (itemList[itemSelected] != "Back"){
 			index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemList[itemSelected]);
-			textbox.text = itemDB[# idb.description, index];
+			textbox.newText = itemDB[# idb.description, index];
 		}
 		
 		// Give textbox back button description
 		else{
-			textbox.text = "Exit the item menu.";
+			textbox.newText = "Exit the item menu.";
 		}
 		
 		#endregion
@@ -172,31 +148,24 @@ else{
 		#region Down Key Pressed
 		if (keyboard_check_pressed(input.down) or keyboard_check_pressed(input.down2)){
 			
-				// Clear textbox
-				textbox.text = "";
+			// If you're not at the bottom of the options list
+			if (itemSelected < itemCount){
 				
-				// If you're not at the bottom of the options list
-				if (itemSelected < itemCount){
-				
-					// Move down an option
-					itemSelected++;
-				}
+				// Move down an option
+				itemSelected++;
+			}
 			
-				// If you're at the bottom of the options list
-				else{
+			// If you're at the bottom of the options list
+			else{
 				
-					// Move back up to the top of the options list
-					itemSelected = 0;
-				}
-	
+				// Move back up to the top of the options list
+				itemSelected = 0;
+			}
 		}
 		#endregion
 
 		#region Up Key Pressed
 		if (keyboard_check_pressed(input.up) or keyboard_check_pressed(input.up2)){
-			
-			// Clear textbox
-			textbox.text = "";
 			
 			// If you're not at the top of the options list
 			if (itemSelected > 0){
@@ -212,23 +181,22 @@ else{
 				itemSelected = itemCount;
 			}
 		}
-	#endregion		
+		#endregion		
 		
 		#region Confirm Key Pressed
 		if (keyboard_check_pressed(input.confirm) or keyboard_check_pressed(input.confirm2)){
 			
-			show_debug_message("itemList[itemSelected] == "+string(itemList[itemSelected]));
-			// If the back option is selected
+			// If the "Back" option is selected
 			if (itemList[itemSelected] == "Back"){
 				
+				// No longer in the item sub menu
+				itemSelected = 0;		// Reset item selected (so arrow goes back to top of the list)
+				inSubMenu = false;		// No longer in the item sub menu
+			
 				// Destroy textbox
 				if (instance_exists(obj_TextBox)){
 					instance_destroy(obj_TextBox);
-				}
-				
-				// Close the item sub menu
-				itemSelected = 0;
-				inSubMenu = false;			
+				}				
 			}
 			
 			// If an item is selected
@@ -245,20 +213,30 @@ else{
 					
 					// Loop through possible effects
 					switch (itemDB[# idb.effect, index]){
+						
+						// Heal Player
 						case itemEffect.heal:
-							if (player.stats[playerStat.hpCurrent] < player.stats[playerStat.hpMax]){								
+						
+							// Only heal if player has less than max hp
+							if (player.stats[playerStat.hpCurrent] < player.stats[playerStat.hpMax]){
 								
-								// Heal Player (making sure not to heal above max)
+								// Roll for heal effectiveness
 								var healRoll = irandom_range(itemDB[# idb.effectValue, index], itemDB[# idb.effectRange, index]);
+								
+								// If heal will bring you to greater than your max hp
 								if (player.stats[playerStat.hpCurrent] + healRoll > player.stats[playerStat.hpMax]){
+									// Go to max HP
 									player.stats[playerStat.hpCurrent] = player.stats[playerStat.hpMax];
 								}
+								// Otherwise
 								else{
+									// Heal for the full amount of the healRoll
 									player.stats[playerStat.hpCurrent] += healRoll;
 								}
 								
 								// Remove the item from the inventory
 								player.items[itemDB[# idb.id, index]]--;
+								
 							}
 							break;
 						case itemEffect.teleHome:
@@ -273,25 +251,17 @@ else{
 					
 					}
 				}
-				
-				// If the item not usable
-				else{
-					
-					
-				}
 			}
-			
-		}
-		
+		}	
 		
 		#endregion
 		
 		#region Back Key Pressed
 		if (keyboard_check_pressed(input.back) or keyboard_check_pressed(input.back2)){
 		
-			// No longer in sub menu
-			itemSelected = 0;
-			inSubMenu = false;
+			// No longer in the item sub menu
+			itemSelected = 0;		// Reset item selected (so arrow goes back to top of the list)
+			inSubMenu = false;		// No longer in the item sub menu
 			
 			// Destroy textbox
 			if (instance_exists(obj_TextBox)){
@@ -311,25 +281,25 @@ else{
 		
 		var player, spellCount, spellList;
 		player = obj_PlayerController;	// Get player as shorthand variable
-		spellCount = 0;
+		spellCount = 0;					// How many spells the player has
 		
-		// Loop through player's items
+		// Loop through player's spells
 		for (var spell = 0; spell < spellID.MAX; spell++){
 			
-			// If the player has 1 or more of an spell in their inventory
+			// If the player has 1 or more of a spell in their inventory
 			if (player.spells[spell] == 1){
 				
 				// Look up the spell ID in the spell database
 				var spellDB, gridHeight, index;
-				spellDB = obj_SpellDatabase.spellDB;		// The ds grid of the spell database
-				gridHeight = ds_grid_height(spellDB);		// The height of the database grid				
-				index = ds_grid_value_y(spellDB, 0, 1, 0, gridHeight-1, spell);
+				spellDB = obj_SpellDatabase.spellDB;							// The ds grid of the spell database
+				gridHeight = ds_grid_height(spellDB);							// The height of the database grid				
+				index = ds_grid_value_y(spellDB, 0, 1, 0, gridHeight-1, spell); // The Y index of the spell in the database
 				
-				spellList[spellCount] = spellDB[# idb.id, index];
-				spellCount++;
+				spellList[spellCount] = spellDB[# idb.id, index];				// Store that spell in a temporary array
+				spellCount++;													// Increment number of spells counted
 			}
 		}
-		spellList[spellCount] = "Back";
+		spellList[spellCount] = "Back";											// When done looping, the last entry is always "Back"
 		#endregion
 		
 		#region Create a text box for the item's description
@@ -345,21 +315,18 @@ else{
 		// Give textbox item descriptions
 		if (spellList[spellSelected] != "Back"){
 			index = ds_grid_value_y(spellDB, 0, 1, 0, gridHeight-1, spellList[spellSelected]);
-			textbox.text = spellDB[# sdb.description, index];
+			textbox.newText = spellDB[# sdb.description, index];
 		}
 		
 		// Give textbox back button description
 		else{
-			textbox.text = "Exit the item menu.";
+			textbox.newText = "Exit the spell menu.";
 		}
 		
 		#endregion
 		
 		#region Down Key Pressed
 		if (keyboard_check_pressed(input.down) or keyboard_check_pressed(input.down2)){
-				
-				// Clear textbox
-				textbox.text = "";
 				
 				// If you're not at the bottom of the options list
 				if (spellSelected < spellCount){
@@ -381,9 +348,6 @@ else{
 		#region Up Key Pressed
 		if (keyboard_check_pressed(input.up) or keyboard_check_pressed(input.up2)){
 
-			// Clear textbox
-			textbox.text = "";
-			
 			// If you're not at the top of the options list
 			if (spellSelected > 0){
 			
@@ -422,11 +386,12 @@ else{
 				// Look up the selected spell's spell ID in the spell database
 				var spellDB, gridHeight, index;
 				spellDB = obj_SpellDatabase.spellDB;		// The ds grid of the spell database
-				gridHeight = ds_grid_height(spellDB);	// The height of the database grid				
+				gridHeight = ds_grid_height(spellDB);		// The height of the database grid				
 				index = ds_grid_value_y(spellDB, 0, 1, 0, gridHeight-1, spellList[spellSelected]);
 				
 				// If you can use the spell outside of battle
 				if (spellDB[# sdb.usableOutOfBattle, index]){
+					
 					show_debug_message("YES YOU CAN YOU THIS SPELL OUTSIDE OF BATTLE!!!");
 					// If the player has enough mana to make the cast
 					if (player.stats[playerStat.mpCurrent] >= spellDB[# sdb.spellCost, index]){
@@ -437,16 +402,23 @@ else{
 							// Healing Spells
 							case spellEffect.heal:
 								
+								// Only heal if player has less than max hp
 								if (player.stats[playerStat.hpCurrent] < player.stats[playerStat.hpMax]){
 									
+									// Subtract mana
 									player.stats[playerStat.mpCurrent] -= spellDB[# sdb.spellCost, index];
 								
-									// Heal Player (making sure not to heal above max
+									// Roll for heal effectiveness
 									var healRoll = irandom_range(spellDB[# sdb.effectMin, index], spellDB[# sdb.effectMax, index]);
+									
+									// If heal will bring you to greater than your max hp
 									if (player.stats[playerStat.hpCurrent] + healRoll > player.stats[playerStat.hpMax]){
+										// Go to max HP
 										player.stats[playerStat.hpCurrent] = player.stats[playerStat.hpMax];
 									}
+									// Otherwise
 									else{
+										// Heal for the full amount of the healRoll
 										player.stats[playerStat.hpCurrent] += healRoll;
 									}
 								}
@@ -510,7 +482,7 @@ else{
 		
 		var player, itemCount, itemList;
 		player = obj_PlayerController;	// Get player as shorthand variable
-		itemCount = 0;
+		itemCount = 0;					// How many items the player has
 		
 		// Loop through player's items
 		for (var item = 0; item < itemID.MAX; item++){
@@ -520,18 +492,18 @@ else{
 				
 				// Look up the item ID in the item database
 				var itemDB, gridHeight, index;
-				itemDB = obj_ItemDatabase.itemDB;		// The ds grid of the item database
-				gridHeight = ds_grid_height(itemDB);	// The height of the database grid				
-				index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, item);
+				itemDB = obj_ItemDatabase.itemDB;								// The ds grid of the item database
+				gridHeight = ds_grid_height(itemDB);							// The height of the database grid				
+				index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, item);	// The Y index of the item in the database
 				
 				// If the item is equipment
 				if (itemDB[# idb.equippable, index] == 1){
-					itemList[itemCount] = itemDB[# idb.id, index];
-					itemCount++;
+					itemList[itemCount] = itemDB[# idb.id, index];				// Store that item in a temporary array
+					itemCount++;												// Increment the number of items counted
 				}
 			}
 		}
-		itemList[itemCount] = "Back";
+		itemList[itemCount] = "Back";											// When done looping, the last entry is always "Back"
 		#endregion
 		
 		#region Create a text box for the item's description
@@ -545,14 +517,14 @@ else{
 		}
 		
 		// Give textbox item descriptions
-		if (itemList[itemSelected] != "Back"){
-			index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemList[itemSelected]);
-			textbox.text = itemDB[# idb.description, index];
+		if (itemList[equipSelected] != "Back"){
+			index = ds_grid_value_y(itemDB, 0, 1, 0, gridHeight-1, itemList[equipSelected]);
+			textbox.newText = itemDB[# idb.description, index];
 		}
 		
 		// Give textbox back button description
 		else{
-			textbox.text = "Exit the item menu.";
+			textbox.newText = "Exit the equip menu.";
 		}
 		
 		#endregion
@@ -560,31 +532,25 @@ else{
 		#region Down Key Pressed
 		if (keyboard_check_pressed(input.down) or keyboard_check_pressed(input.down2)){
 				
-				// Clear textbox
-				textbox.text = "";
-			
-				// If you're not at the bottom of the options list
-				if (equipSelected < itemCount){
+			// If you're not at the bottom of the options list
+			if (equipSelected < itemCount){
 				
-					// Move down an option
-					equipSelected++;
-				}
+				// Move down an option
+				equipSelected++;
+			}
 			
-				// If you're at the bottom of the options list
-				else{
+			// If you're at the bottom of the options list
+			else{
 				
-					// Move back up to the top of the options list
-					equipSelected = 0;
-				}
+				// Move back up to the top of the options list
+				equipSelected = 0;
+			}
 	
 		}
 		#endregion
 
 		#region Up Key Pressed
 		if (keyboard_check_pressed(input.up) or keyboard_check_pressed(input.up2)){
-			
-			// Clear textbox
-			textbox.text = "";
 			
 			// If you're not at the top of the options list
 			if (equipSelected > 0){
@@ -608,10 +574,10 @@ else{
 			// If the back option is selected
 			if (itemList[equipSelected] == "Back"){
 				
-				// Close the item sub menu
-				equipSelected = 0;
-				inSubMenu = false;
-				
+				// No longer in sub menu
+				equipSelected = 0;		// Reset equip selected (so arrow goes back to top of the list)
+				inSubMenu = false;		// No longer in the equip sub menu
+			
 				// Destroy textbox
 				if (instance_exists(obj_TextBox)){
 					instance_destroy(obj_TextBox);
@@ -652,8 +618,8 @@ else{
 		if (keyboard_check_pressed(input.back) or keyboard_check_pressed(input.back2)){
 		
 			// No longer in sub menu
-			equipSelected = 0;
-			inSubMenu = false;
+			equipSelected = 0;		// Reset equip selected (so arrow goes back to top of the list)
+			inSubMenu = false;		// No longer in the equip sub menu
 			
 			// Destroy textbox
 			if (instance_exists(obj_TextBox)){
@@ -665,16 +631,17 @@ else{
 	
 	#endregion
 	
-	// Close Status Menu
+	// Close Status Sub Menu
 	else{
 		
 		#region Back Key Pressed
 		if (keyboard_check_pressed(input.back) or keyboard_check_pressed(input.back2)){
 		
 			// No longer in sub menu
-			inSubMenu = false;
+			inSubMenu = false;		// No longer in the status sub-menu
 		}
 		#endregion
 	}
+	
+	#endregion
 }
-#endregion

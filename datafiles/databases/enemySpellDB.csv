@@ -1,0 +1,8 @@
+id,type,effectMin,effectMax
+0,Alleviate,10,17
+1,Afflict,8,12
+2,Entrance,1,3
+3,Silence,1,3
+4,Weaken,-1,-1
+5,Revivify,85,100
+6,Destroy,58,65

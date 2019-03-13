@@ -1,5 +1,8 @@
 /// @description Initialize Global Variables
 
-// Game
+// Personal Variables 
+showDebug = false;
+
+// Game Globals
 global.paused = false;
 global.inBattle = false;
