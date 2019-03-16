@@ -7,7 +7,9 @@ if (!global.paused){
 	if (!global.inBattle){
 		// Only allow player to set movement destination if not already moving
 		if (targetX == x and targetY == y){
-		
+			
+			var encounterRate = 1/16;
+			
 			// Move up
 			if (keyboard_check(input.up) or keyboard_check(input.up2)){
 				sprite_index = spr_PlayerUp;
@@ -17,9 +19,9 @@ if (!global.paused){
 					targetY = y-moveSpeed;
 				
 					// Check for random encounter
-					var battle = obj_BattleController;
-					if (random(1) <= battle.encounterRate){
+					if (random(1) <= encounterRate){
 						global.inBattle = true;
+						scr_battle_get_encounter(enemyID.slime, 40/100, enemyID.redSlime, 40/100, enemyID.ghost, 20/100);
 					}
 				}
 			}
@@ -33,9 +35,9 @@ if (!global.paused){
 					targetY = y+moveSpeed;
 				
 					// Check for random encounter
-					var battle = obj_BattleController;
-					if (random(1) <= battle.encounterRate){
+					if (random(1) <= encounterRate){
 						global.inBattle = true;
+						scr_battle_get_encounter(enemyID.slime, 40/100, enemyID.redSlime, 40/100, enemyID.ghost, 20/100);
 					}
 				}
 			}
@@ -49,9 +51,9 @@ if (!global.paused){
 					targetX = x-moveSpeed;
 				
 					// Check for random encounter
-					var battle = obj_BattleController;
-					if (random(1) <= battle.encounterRate){
+					if (random(1) <= encounterRate){
 						global.inBattle = true;
+						scr_battle_get_encounter(enemyID.slime, 40/100, enemyID.redSlime, 40/100, enemyID.ghost, 20/100);
 					}
 				}
 			}
@@ -65,9 +67,9 @@ if (!global.paused){
 					targetX = x+moveSpeed;
 				
 					// Check for random encounter
-					var battle = obj_BattleController;
-					if (random(1) <= battle.encounterRate){
+					if (random(1) <= encounterRate){
 						global.inBattle = true;
+						scr_battle_get_encounter(enemyID.slime, 40/100, enemyID.redSlime, 40/100, enemyID.ghost, 20/100);
 					}
 				}
 			}

@@ -4,7 +4,8 @@
     "mvc": "1.1",
     "name": "8e0e6957-1196-4a47-b42b-f56e28893732",
     "children": [
-        "a4344b7d-a39a-4905-be08-b3180d6fdba2"
+        "dffccb71-b49b-4560-8710-7892c3126f26",
+        "05a36062-ad85-44cc-8e6f-60c38a61f44d"
     ],
     "filterType": "GMScript",
     "folderName": "Battle",

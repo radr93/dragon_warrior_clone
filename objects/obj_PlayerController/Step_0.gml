@@ -23,6 +23,7 @@ while (stats[playerStat.xpCurrent] >= stats[playerStat.xpMax]){
 	stats[playerStat.mpMax] = mpGain;
 	stats[playerStat.strength] = strGain;
 	stats[playerStat.agility] = agiGain;
+	stats[playerStat.critChance] = stats[playerStat.agility]/400;
 	
 	// See if any new spells can be learned
 	if (levelDB[# ldb.newSpell, index] != -1){

@@ -6,7 +6,6 @@ randomize();
 // Launch Controller Objects
 instance_create_layer(0,0,"Controllers",input);
 instance_create_layer(0,0,"Controllers",obj_Global);
-instance_create_layer(0,0,"Controllers",obj_BattleController);
 
 // Launch Databases
 instance_create_layer(0,0,"Controllers",obj_EnemyDatabase);

@@ -1,7 +1,7 @@
 /// @description Initialize Variables
 
-// Enumerate Battle Functions
-#region Enumerate Scenery Types
+// Enumerate Battle Options
+#region Scenery Types (jungle, mountain etc.)
 enum sceneryType{
 	field,
 	jungle,
@@ -13,14 +13,14 @@ enum sceneryType{
 	MAX
 }
 #endregion
-#region Enumerate Encounter List Parameters
+#region Encounter List parameters (id, chance of spawning)
 enum encounterParam{
 	id,		// The id of the monster to encounter
 	chance,	// The chance of encountering that monster
 	MAX
 }
 #endregion
-#region Enumerate Action Options
+#region Action List Options (fight, spell, item, run)
 enum action{
 	fight,
 	spell,
@@ -30,7 +30,7 @@ enum action{
 }
 
 #endregion
-#region Enumerate Battle States
+#region Enumerate Battle State Machine
 enum battleState{
 	beginEncounter,
 	playerPreEmptive,
@@ -49,28 +49,27 @@ enum battleState{
 }
 #endregion
 
-// Set default battle parameters	( an area should change the following depending on how often what spawns there )
-encounterRate = 1/8;				// How often you encounter a monster in the current area
+// Initialize Variables
 scenery = sceneryType.jungle;		// What the battle scenery is in the current area
-encounterList = -1;					// An array of all possible enemies (as an enemyID) and their probability of spawning
-
-// Shared Battle State Variables
 state = battleState.beginEncounter;	// Default battle state
 encounter = -1;						// Enemy id of the enemy encountered
 encounterHP = -1;					// How much HP the encounter has left
 
+// Pre Emptive Battle State Variables
+enemyPreEmptive = false;			// Did the enemy get a pre emptive strike? (boolean)
+playerPreEmptive = false;			// Did the player get a pre emptive strike? (boolean)
+
 // Action Menu
 actionSelected = action.fight;		// Which action the player has selected
+
+// Status Conditions
+sleepCheck = false;
 playerSleep = false;				// Is the player sleep?
 playerSilenced = false;				// Is the player silenced?
 playerWeakened = false;				// Is the player weakened?
 enemySleep = false;					// Is the enemy sleep?
 enemySilenced = false;				// Is the enemy silenced?
 enemyWeakened = false;				// Is the enemy weakened?
-
-// Pre Emptive Battle State Variables
-enemyPreEmptive = false;			// Did the enemy get a pre emptive strike? (boolean)
-playerPreEmptive = false;			// Did the player get a pre emptive strike? (boolean)
 
 // Fight Battle State Variables
 initiative = undefined;				// Who attacks first, "player" or "enemy"?
@@ -93,8 +92,6 @@ fleeSuccessful = undefined;			// Becomes boolean if/when player tries to flee
 // Victory Battle State Variables
 victoryConfirm1 = false;			// 
 victoryConfirm2 = false;			// 
-victoryConfirm3 = false;			// 
-victoryConfirm4 = false;			// 
 
 
 #region Set positions of battle HUD elements
@@ -118,19 +115,4 @@ statsTextY = 104;
 // Monster name and level position
 enemyNameX = 512;
 enemyNameY = 352;
-#endregion
-
-
-
-
-#region This can be safely deleted when areas begin providing the battle controller with their own encounter ids and weights
-encounterList[0, encounterParam.id] = enemyID.slime;
-encounterList[0, encounterParam.chance] = 33/100;
-encounterList[1, encounterParam.id] = enemyID.redSlime;
-encounterList[1, encounterParam.chance] = 33/100;
-encounterList[2, encounterParam.id] = enemyID.drakee;
-encounterList[2, encounterParam.chance] = 24/100;
-encounterList[3, encounterParam.id] = enemyID.ghost;
-encounterList[3, encounterParam.chance] = 10/100;
-
 #endregion

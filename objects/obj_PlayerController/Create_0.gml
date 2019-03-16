@@ -19,6 +19,7 @@ enum playerStat{
 	agility,
 	attackPower,
 	defence,
+	critChance,
 	
 	goldCount,
 	
@@ -58,6 +59,8 @@ stats[playerStat.strength] = 4;
 stats[playerStat.agility] = 4;
 stats[playerStat.attackPower] = stats[playerStat.strength];
 stats[playerStat.defence] = stats[playerStat.agility]/2;
+stats[playerStat.defence] = stats[playerStat.agility]/2;
+stats[playerStat.critChance] = stats[playerStat.agility]/400;
 #endregion
 
 #region Initialize Player Inventory

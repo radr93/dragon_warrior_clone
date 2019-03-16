@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "05a36062-ad85-44cc-8e6f-60c38a61f44d",
+            "Value": {
+                "id": "d8e01c60-66e9-48b8-be59-8b96e13e0604",
+                "resourcePath": "scripts\\scr_battle_set_scenery\\scr_battle_set_scenery.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "071736cf-edc5-4779-b136-5b6ab04c36bc",
             "Value": {
                 "id": "97e320f0-1ea1-4d12-aeb0-ebb695128d1c",
@@ -140,6 +148,14 @@
                 "id": "fdc37381-6673-42d3-876a-975ef06eb5c4",
                 "resourcePath": "sprites\\spr_PlayerLeft\\spr_PlayerLeft.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "113ef1aa-a323-4308-9723-39f44525e17e",
+            "Value": {
+                "id": "44003751-5c97-4904-b4b5-c4734a474c40",
+                "resourcePath": "scripts\\scr_enemy_id_to_IDstring\\scr_enemy_id_to_IDstring.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1015,14 +1031,6 @@
             }
         },
         {
-            "Key": "a4344b7d-a39a-4905-be08-b3180d6fdba2",
-            "Value": {
-                "id": "99c0b2ae-cdff-4f28-bf0a-dfa210aee707",
-                "resourcePath": "scripts\\scr_battle_reset_variables\\scr_battle_reset_variables.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "a6504167-1b1a-40ee-9df3-7fd97e57ba03",
             "Value": {
                 "id": "2971492d-8cb0-4777-8f5f-1e1407e791a4",
@@ -1239,6 +1247,14 @@
             }
         },
         {
+            "Key": "dffccb71-b49b-4560-8710-7892c3126f26",
+            "Value": {
+                "id": "c34a02cb-0d1c-46c3-bced-ca771a4b5e81",
+                "resourcePath": "scripts\\scr_battle_get_encounter\\scr_battle_get_encounter.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e1b81105-467e-40c9-b940-c87487beea22",
             "Value": {
                 "id": "c4686183-8ba9-4b7a-b24a-48f729d18b01",
@@ -1424,8 +1440,10 @@
         }
     ],
     "script_order": [
-        "a4344b7d-a39a-4905-be08-b3180d6fdba2",
+        "dffccb71-b49b-4560-8710-7892c3126f26",
+        "05a36062-ad85-44cc-8e6f-60c38a61f44d",
         "15919fef-6c99-4dd8-89fd-0b42de67455b",
+        "113ef1aa-a323-4308-9723-39f44525e17e",
         "18607330-d302-4cb7-b197-478f760f8e01",
         "fc816d81-6119-45b9-8e4a-0f41318feb9c",
         "74f4c814-4f37-4507-a196-5d68be2198ae",
